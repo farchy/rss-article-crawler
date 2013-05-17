@@ -1,2 +1,5 @@
 # Put RSS links here, line by line
 # Lines starting with "#" are ignored
+
+# for example:
+http://www.cnbc.com/id/17490692/device/rss/rss.xml
