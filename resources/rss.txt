@@ -1,0 +1,2 @@
+# Put RSS links here, line by line
+# Lines starting with "#" are ignored
