@@ -14,7 +14,8 @@ And then install the rest of the requirements:
 
     pip install -r requirements.txt
 
-Now all you have to do is insert a seed of RSS feeds into `resources/rss.txt`, and then simply run:  
+Now all you have to do is insert a seed of RSS feeds into `resources/rss.txt`,  
+Enter the src folder and then simply run:
 
     python webCrawler.py
 
