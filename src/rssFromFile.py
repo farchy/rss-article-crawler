@@ -6,7 +6,7 @@ import threading
 from rssItems import getLinks
 from rssItems import RssFetcher
 
-RESOURCES = "resources/"
+RESOURCES = "../resources/"
 
 DEFAULT_FILE = RESOURCES + "rss.txt"
 
