@@ -4,6 +4,7 @@ import sys
 import re
 import chardet
 
+
 def asUnicode(text):
     if text is unicode:
         return text
@@ -24,7 +25,8 @@ def asUnicode(text):
                     print "ERROR: could not infer text encoding"
                     return unicode(text, chardet.detect(text).get('encoding'))
 
-def countOccurrences(text="", keywords=[], foundTerms = {}):#, maxLength=1):
+
+def countOccurrences(text="", keywords=[], foundTerms={}):  # , maxLength=1):
     if not text or not keywords:
         return None
 
@@ -45,14 +47,17 @@ def countOccurrences(text="", keywords=[], foundTerms = {}):#, maxLength=1):
 
     return [foundTerms, found]
 
+
 def cleanText(text=""):
     """
     Cleans a given string from non-alphanumeric characters.
     """
     return re.sub(r'[^\w]', ' ', text)
 
+
 def splitSentences(text=""):
-    return text.replace("!", ". ").replace("?", ". ").split(". ")
+    return re.split(r"[\.!?]+\s*", text)
+
 
 def main(argv):
     text = """Later, a 21-year-old woman, Tugba Altinkaynak, was rescued after being trapped beneath rubble for some 27-hours. There was no immediate information on her condition. Her father, Nevzat, said she was at a family lunch with 12 other relatives when the temblor hit. Four of them were pulled out alive earlier.
@@ -65,10 +70,9 @@ Sahin expected the death toll in Ercis to rise, but not as much as initially fea
     print("unigrams -")
     print countOccurrences(cleanText(text), keywords)[0]
     print("bigrams -")
-    print countOccurrences(cleanText(text), keywords)[0]#, 2)
+    print countOccurrences(cleanText(text), keywords)[0]  # , 2)
     print("sentences -")
     print(splitSentences(text))
 
 if __name__ == "__main__":
     main(sys.argv)
-
